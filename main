@@ -1,6 +1,14 @@
 local dropping = false
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == ".fly" then
+loadstring(game:HttpGet('https://raw.githubusercontent.com/i-reddd/other-scripts/main/fly'))()
+wait(1)
+    end
+end)
+
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if msg == ".crash main" then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/LPrandom/lua-projects/master/dahoodcrasher.lua"))()
 wait(1)
