@@ -1,4 +1,5 @@
 local dropping = false
+local player = game.Players.LocalPlayer
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if msg == ".fly" then
@@ -9,22 +10,25 @@ end)
 
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
-    if msg == ".crash main" then
+    if msg == ".main crash" then
 loadstring(game:HttpGet("https://raw.githubusercontent.com/LPrandom/lua-projects/master/dahoodcrasher.lua"))()
 wait(1)
     end
 end)
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
-    if msg == ".drop main" then
+    if msg == ".main drop" then
     dropping = true
-    game.ReplicatedStorage.MainEvent:FireServer("DropMoney",10000)
+        repeat
+            game.ReplicatedStorage.MainEvent:FireServer("DropMoney",10000)
+        wait(0.1)
+        until dropping == false
 wait(1)
 end
 end)
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
-    if msg == ".stop main" then
+    if msg == ".main stop" then
     dropping = false
 end
 wait(1)
@@ -56,7 +60,14 @@ end)
 
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
-    if msg == ".setup admin" then
+    if msg == ".main stop" then
+
+end
+wait(1)
+end)
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == ".admin" then
 wait(1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-872.18127441406, -32.649211883545, -531.76177978516)
 wait(1)
@@ -64,7 +75,7 @@ wait(1)
 end)
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
-    if msg == ".setup bank" then
+    if msg == ".bank" then
 wait(1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-407.96932983398, 21.749994277954, -297.27017211914)
 wait(1)
@@ -72,9 +83,16 @@ wait(1)
 end)
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
-    if msg == ".setup basketball" then
+    if msg == ".basketball" then
 wait(1)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-865.14288330078, 43.999835968018, -482.26336669922)
 wait(1)
+    end
+end)
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == ".train" then
+wait(1)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(659.073975, 49.4044609, -59.0317612, 0.702266455, -0.0188675374, 0.7116642, -0.0261479188, 0.998290658, 0.0522691682, -0.711433887, -0.0553154051, 0.70057267)wait(1)
     end
 end)
