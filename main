@@ -58,14 +58,6 @@ end
 wait(1)
 end)
 
-
-game.Players.LocalPlayer.Chatted:Connect(function(msg)
-    if msg == ".main stop" then
-
-end
-wait(1)
-end)
-
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if msg == ".admin" then
 wait(1)
